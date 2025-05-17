@@ -1,0 +1,168 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0a0a1f; /* Darker base for cypherpunk feel */
+  /* Optional: Add a subtle repeating pattern */
+  background-image: radial-gradient(circle, #1a1a3c 2px, transparent 2px),
+                    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cg fill='%230d0d26'%3E%3Cpath d='M0 0h20v1H0zM0 2h20v1H0zM0 4h20v1H0zM0 6h20v1H0zM0 8h20v1H0zM0 10h20v1H0zM0 12h20v1H0zM0 14h20v1H0zM0 16h20v1H0zM0 18h20v1H0z'/%3E%3C/g%3E%3C/svg%3E"); /* Example subtle scanlines/grid */
+  background-size: auto, 20px 20px;
+  font-family: 'Roboto Mono', monospace;
+  color: #e0e0e0; /* Light grey for primary text */
+  text-shadow: 0 0 3px rgba(50, 205, 50, 0.3); /* Subtle global text glow */
+}
+
+.main-content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+}
+
+.container {
+  background: rgba(10, 10, 31, 0.6); /* Dark, slightly transparent */
+  border: 2px solid #32CD32; /* Neon Green */
+  border-radius: 8px; /* Sharper edges */
+  box-shadow: 0 0 15px rgba(50, 205, 50, 0.4), 0 0 30px rgba(50, 205, 50, 0.2) inset;
+  padding: 2rem 2rem;
+  max-width: 480px; /* Slightly wider for the new style */
+  width: 90%;
+  text-align: center;
+  backdrop-filter: blur(3px); /* Frosted glass effect if desired */
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive; /* Pixel/Retro font */
+  color: #32CD32; /* Neon Green */
+  font-size: 2.2rem; /* Adjust as needed for pixel font */
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px #32CD32, 0 0 10px #32CD32, 0 0 2px #fff;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  color: #b0b0b0; /* Slightly dimmer than main text */
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+.neutral {
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 4px #32CD32;
+  border: 1px dashed #32CD32;
+  padding: 5px 10px;
+  display: inline-block; /* To make border wrap content */
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 0;
+  margin-bottom: 1rem;
+  border: 2px solid #32CD32; /* Neon Green border */
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: #e0e0e0; /* Light text */
+  background: transparent; /* Transparent background */
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  text-transform: uppercase; /* Common in retro/tech UI */
+  letter-spacing: 1px;
+  cursor: pointer; /* Indicate interactivity */
+}
+
+.btn:hover,
+.btn:focus {
+  background: #32CD32; /* Neon Green fill on hover */
+  color: #0a0a1f; /* Dark text on hover */
+  box-shadow: 0 0 10px #32CD32, 0 0 20px #32CD32;
+  outline: none;
+}
+
+.btn:last-of-type {
+  margin-bottom: 1.5rem; /* Space before GIF */
+}
+
+.btn.mail {
+  font-size: 1.1rem; /* Slightly larger for the icon */
+}
+
+.gif-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem; /* Space above the GIF */
+  margin-bottom: 0; /* Reset bottom margin */
+}
+
+.gif-container img {
+  max-width: 200px; /* Larger GIF */
+  width: 100%;
+  border-radius: 5px;
+  border: 2px solid #32CD32; /* Neon green border for GIF */
+  box-shadow: 0 0 10px rgba(50, 205, 50, 0.5);
+  background: #000; /* Keep black background if GIF is transparent */
+  display: block;
+}
+
+/* Blinking cursor effect for buttons/links */
+.btn::after, h1::after {
+  content: '_';
+  opacity: 0;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+h1::after {
+ display: none; /* Or style differently if you want it for H1 */
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+
+@media (max-width: 600px) {
+  .container {
+    padding: 1.5rem 1rem;
+    width: 95%;
+  }
+  h1 {
+    font-size: 1.8rem;
+  }
+  .tagline {
+    font-size: 0.8rem;
+  }
+  .neutral {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 0.7rem 0;
+    font-size: 0.9rem;
+  }
+  .gif-container img {
+    max-width: 150px; /* Adjust GIF size for smaller screens */
+  }
+}
